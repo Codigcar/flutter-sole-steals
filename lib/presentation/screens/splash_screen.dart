@@ -17,8 +17,8 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void _splash() async {
-    await Future.delayed(const Duration(milliseconds: 2800));
-    appRouter.go('/home');
+    // await Future.delayed(const Duration(milliseconds: 2800));
+    // appRouter.go('/home');
   }
 
   @override
