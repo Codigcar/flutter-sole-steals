@@ -1,40 +1,40 @@
 {
   "project_info": {
-    "project_number": "395841594471",
-    "project_id": "push-notification-b1ddc",
-    "storage_bucket": "push-notification-b1ddc.appspot.com"
+    "project_number": "157067237383",
+    "project_id": "push-notification-dev-b1be7",
+    "storage_bucket": "push-notification-dev-b1be7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:395841594471:android:14bc87f48798341b9620c2",
+        "mobilesdk_app_id": "1:157067237383:android:943046b277151e0bdfb2a2",
         "android_client_info": {
           "package_name": "com.whiz.solesteals.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "395841594471-bq8jdtdru5hsj4ip336ms1538nan8ae9.apps.googleusercontent.com",
+          "client_id": "157067237383-d0mqoulk852p24kdvsk9gcsm1ggr1o0q.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA0NWEa7F4BSQFIvG9y2xQrtxk0pkzTMNk"
+          "current_key": "AIzaSyCFZ01C39BIXGSwQKYz_dnIjmXJbKaGV8M"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "395841594471-bq8jdtdru5hsj4ip336ms1538nan8ae9.apps.googleusercontent.com",
+              "client_id": "157067237383-d0mqoulk852p24kdvsk9gcsm1ggr1o0q.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "395841594471-5941t00j5rqcdihcms0a1h7fltkqkiku.apps.googleusercontent.com",
+              "client_id": "157067237383-s4c8m2kigei33kkapdodb6dujj8mnieb.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.whiz.solesteals.app"
+                "bundle_id": "ios.app.solesteal1.dev"
               }
             }
           ]

@@ -50,20 +50,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA0NWEa7F4BSQFIvG9y2xQrtxk0pkzTMNk',
-    appId: '1:395841594471:android:14bc87f48798341b9620c2',
-    messagingSenderId: '395841594471',
-    projectId: 'push-notification-b1ddc',
-    storageBucket: 'push-notification-b1ddc.appspot.com',
+    apiKey: 'AIzaSyCFZ01C39BIXGSwQKYz_dnIjmXJbKaGV8M',
+    appId: '1:157067237383:android:943046b277151e0bdfb2a2',
+    messagingSenderId: '157067237383',
+    projectId: 'push-notification-dev-b1be7',
+    storageBucket: 'push-notification-dev-b1be7.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyA_Xpnh5H8IdAWmjSJGK3bTASH8G_5bOt8',
-    appId: '1:395841594471:ios:073d9b7fad95c3589620c2',
-    messagingSenderId: '395841594471',
-    projectId: 'push-notification-b1ddc',
-    storageBucket: 'push-notification-b1ddc.appspot.com',
-    iosClientId: '395841594471-eov3871f76cng77chen8n9bq8dabtbus.apps.googleusercontent.com',
-    iosBundleId: 'ios.app.solesteal1',
+    apiKey: 'AIzaSyDLDOQPRz-DdRMF9p7FoOOZTRGs1w78uS4',
+    appId: '1:157067237383:ios:150c0e72805d11bedfb2a2',
+    messagingSenderId: '157067237383',
+    projectId: 'push-notification-dev-b1be7',
+    storageBucket: 'push-notification-dev-b1be7.appspot.com',
+    iosClientId: '157067237383-s4c8m2kigei33kkapdodb6dujj8mnieb.apps.googleusercontent.com',
+    iosBundleId: 'ios.app.solesteal1.dev',
   );
 }

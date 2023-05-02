@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>395841594471-eov3871f76cng77chen8n9bq8dabtbus.apps.googleusercontent.com</string>
+	<string>157067237383-s4c8m2kigei33kkapdodb6dujj8mnieb.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.395841594471-eov3871f76cng77chen8n9bq8dabtbus</string>
+	<string>com.googleusercontent.apps.157067237383-s4c8m2kigei33kkapdodb6dujj8mnieb</string>
 	<key>API_KEY</key>
-	<string>AIzaSyA_Xpnh5H8IdAWmjSJGK3bTASH8G_5bOt8</string>
+	<string>AIzaSyDLDOQPRz-DdRMF9p7FoOOZTRGs1w78uS4</string>
 	<key>GCM_SENDER_ID</key>
-	<string>395841594471</string>
+	<string>157067237383</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>ios.app.solesteal1</string>
+	<string>ios.app.solesteal1.dev</string>
 	<key>PROJECT_ID</key>
-	<string>push-notification-b1ddc</string>
+	<string>push-notification-dev-b1be7</string>
 	<key>STORAGE_BUCKET</key>
-	<string>push-notification-b1ddc.appspot.com</string>
+	<string>push-notification-dev-b1be7.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:395841594471:ios:073d9b7fad95c3589620c2</string>
+	<string>1:157067237383:ios:150c0e72805d11bedfb2a2</string>
 </dict>
 </plist>
