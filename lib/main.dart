@@ -81,7 +81,7 @@ class _HandleNotificationInteractionsState
 
     // TODO! redirige a la pantalla 
     final path = message.data['path'];
-    appRouter.pushNamed('homeWithPath', params: {'path': path});
+    appRouter.replaceNamed('homeWithPath', params: {'path': path});
   }
 
   @override
