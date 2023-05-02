@@ -23,13 +23,17 @@ Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
   FirebaseMessaging messaging = FirebaseMessaging.instance;
   int pushNumberId = 0;
-
   final Future<void> Function() requestLocalNotificationPermission;
   final void Function({ required int id, String? title, String? body, String? data })? showLocalNotification;
 
   NotificationsBloc({this.showLocalNotification, required this.requestLocalNotificationPermission}) : super(const NotificationsState()) {
     on<NotificationsStatusChanged>(_notificationStatusChanged);
     on<NotificationReceived>(_onPushMessageReceived);
+    on<NotificationPathChanged>((event, emit) {
+      emit(state.copyWith(
+        path: event.path
+      ));
+    });
 
     // Verificar estado de las notificaciones
     _initialStatusCheck();
@@ -56,6 +60,8 @@ class NotificationsBloc extends Bloc<NotificationsEvent, NotificationsState> {
     _getFCMToken();
   }
 
+  //
+  
   void _initialStatusCheck() async {
     // saber el estado actual
     final settings = await messaging.getNotificationSettings();

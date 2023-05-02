@@ -81,6 +81,7 @@ class _HandleNotificationInteractionsState
 
     // TODO! redirige a la pantalla 
     final path = message.data['path'];
+    context.read<NotificationsBloc>().add(NotificationPathChanged(path));
     appRouter.replaceNamed('homeWithPath', params: {'path': path});
   }
 
