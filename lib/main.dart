@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -81,8 +83,9 @@ class _HandleNotificationInteractionsState
 
     // TODO! redirige a la pantalla 
     final path = message.data['path'];
+    print('_handleMessage: ${path}');
     context.read<NotificationsBloc>().add(NotificationPathChanged(path));
-    appRouter.replaceNamed('homeWithPath', params: {'path': path});
+    appRouter.pushNamed('homeWithPath', params: {'path': path});
   }
 
   @override

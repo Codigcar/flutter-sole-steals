@@ -2,9 +2,10 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:solesteals/config/local_notifications/local_notifications.dart';
 
 import 'package:solesteals/presentation/blocs/notifications/notifications_bloc.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   final String path;
@@ -15,50 +16,30 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  late WebViewController _controllerGlobal;
-
   @override
   void initState() {
     super.initState();
     context.read<NotificationsBloc>().requestPermission();
   }
 
-  Future<bool> _exitApp(BuildContext context) async {
-    print('TESTTESTETST');
-    if (Platform.isIOS) return Future.value(false);
-
-    if (await _controllerGlobal.canGoBack()) {
-      _controllerGlobal.goBack();
-      return Future.value(false);
-    } else {
-      return Future.value(true);
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
-    context.select((NotificationsBloc bloc) => bloc.state.status);
-
-    Widget homeWebView() {
-      return WillPopScope(
-        onWillPop: () => _exitApp(context),
-        child: Container(
-          color: Colors.black,
-          child: SafeArea(
-            child: WebView(
-              onWebViewCreated: (WebViewController controller) {
-                _controllerGlobal = controller;
-              },
-              initialUrl: 'https://www.solesteals.com${widget.path}',
-              javascriptMode: JavascriptMode.unrestricted,
-            ),
-          ),
-        ),
-      );
-    }
+    // context.select((NotificationsBloc bloc) => bloc.state.status);
+    // final path = BlocProvider.of<NotificationsBloc>(context).state.path;
+    // print('[PATH]: ${path}');
 
     return Scaffold(
-      body: homeWebView(),
+      body: Container(
+        color: Colors.black,
+        child: SafeArea(
+            child: InAppWebView(
+          initialUrlRequest:
+              URLRequest(url: Uri.parse('https://www.solesteals.com${widget.path}')),
+          initialOptions: InAppWebViewGroupOptions(
+            ios: IOSInAppWebViewOptions(disallowOverScroll: true),
+          ),
+        )),
+      ),
     );
   }
 }
