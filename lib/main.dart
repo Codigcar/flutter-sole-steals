@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       routerConfig: appRouter,
       theme: AppTheme().getTheme(),
-      // TODO! `HandleNotificationInteractions` envuelve todo el App dentro de este 
+      // TODO! `HandleNotificationInteractions` envuelve todo el App dentro de este
       builder: (context, child) =>
           HandleNotificationInteractions(child: child!),
     );
@@ -81,7 +81,7 @@ class _HandleNotificationInteractionsState
     // TODO! llama a la funcion `handleRemoteMessage` del bloc
     // context.read<NotificationsBloc>().handleRemoteMessage(message);
 
-   // TODO! redirige a la pantalla 
+    // TODO! redirige a la pantalla
     final path = message.data['path'];
     print('_handleMessage: ${path}');
     context.read<NotificationsBloc>().add(NotificationPathChanged(path));
