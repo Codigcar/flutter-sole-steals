@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void _splash() async {
-    await Future.delayed(const Duration(milliseconds: 1800));
+    await Future.delayed(const Duration(milliseconds: 2800));
     final path = BlocProvider.of<NotificationsBloc>(context).state.path;
     await _allowNotifications();
     print('[DATA]: $path');
