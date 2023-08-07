@@ -1,10 +1,13 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'dart:developer';
+import 'dart:io';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:go_router/go_router.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import 'package:solesteals/presentation/blocs/notifications/notifications_bloc.dart';
@@ -34,28 +37,52 @@ class _HomeScreenState extends State<HomeScreen> {
       showDialog(
         context: context,
         builder: (context) {
-          return AlertDialog(
-            title: const Text('Allow app to send you notifications ?'),
+          if (Platform.isAndroid) {
+            return AlertDialog(
+              title: const Text('Allow app to send you notifications?'),
+              content: const Text(
+                  'You need to allow notifications permissions in the app settings to receive notifications.'),
+              actions: <Widget>[
+                // if user deny again, we do nothing
+                TextButton(
+                  onPressed: () {
+                    context.pop(context);
+                  },
+                  child: const Text('Don\'t allow',
+                      style: TextStyle(color: Colors.red)),
+                ),
+
+                // if user is agree, you can redirect him to the app parameters :)
+                TextButton(
+                  onPressed: () {
+                    openAppSettings();
+                    context.pop(context);
+                  },
+                  child:
+                      const Text('Allow', style: TextStyle(color: Colors.blue)),
+                ),
+              ],
+            );
+          }
+
+          return CupertinoAlertDialog(
+            title: const Text('Allow app to send you notifications?'),
             content: const Text(
                 'You need to allow notifications permissions in the app settings to receive notifications.'),
             actions: <Widget>[
-              // if user deny again, we do nothing
-              TextButton(
+              CupertinoDialogAction(
+                child: const Text('Don\'t allow', style: TextStyle(color: Colors.blue),),
                 onPressed: () {
-                  Navigator.pop(context);
+                  context.pop(context);
                 },
-                child: const Text('Don\'t allow',
-                    style: TextStyle(color: Colors.red)),
               ),
-
-              // if user is agree, you can redirect him to the app parameters :)
-              TextButton(
+              CupertinoDialogAction(
+                isDefaultAction: true,
+                child: const Text('Allow', style: TextStyle(color: Colors.blue),),
                 onPressed: () {
                   openAppSettings();
-                  Navigator.pop(context);
+                  context.pop(context);
                 },
-                child:
-                    const Text('Allow', style: TextStyle(color: Colors.blue)),
               ),
             ],
           );
