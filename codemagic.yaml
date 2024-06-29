@@ -17,11 +17,14 @@ workflows:
       - name: Get Flutter packages
         script: | 
           flutter packages pub get
-      - name: Build APK with Flutter
+      # - name: Build APK with Flutter
+      #   script: | 
+      #     flutter build apk --release \
+      #       --build-name=1.0.$BUILD_NUMBER \
+      #       --build-number=$BUILD_NUMBER
+      - name: Build AAB with Flutter
         script: | 
-          flutter build appbundle \
-            --build-name=1.0.$BUILD_NUMBER \
-            --build-number=$BUILD_NUMBER
+          flutter build appbundle --release
     artifacts:
       - build/**/outputs/**/*.apk
     publishing:
