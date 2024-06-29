@@ -27,6 +27,9 @@ workflows:
           flutter build appbundle --release
     artifacts:
       - build/**/outputs/**/*.apk
+      - build/**/outputs/**/*.aab
+      - build/**/outputs/**/mapping.txt
+      - flutter_drive.log
     publishing:
       firebase:
         firebase_token: $FIREBASE_TOKEN

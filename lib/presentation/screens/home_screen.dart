@@ -24,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(() => verifyNotifications());
+    // Future.microtask(() => verifyNotifications());
     context.read<NotificationsBloc>().requestPermission();
   }
 
